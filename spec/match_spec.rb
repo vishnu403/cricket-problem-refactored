@@ -100,7 +100,7 @@ describe "change strike if an over is complete" do
 
     player1 = Player.new("test1", player1_probability)
     player2 = Player.new("test2", player2_probability)
-    player3 = Player.new("test2", player3_probability)
+    player3 = Player.new("test3", player3_probability)
 
     players = [player1, player2,player3]
     match = Match.new(players,40,3,19)

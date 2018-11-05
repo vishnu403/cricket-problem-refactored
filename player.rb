@@ -1,7 +1,6 @@
 class Player
-  private
+
   attr_accessor :name, :probability, :runs_scored, :balls_faced, :on_strike, :is_out
-  public
   def initialize( name, probability)
     @name = name
     @probability = probability
@@ -40,5 +39,16 @@ class Player
   end
   def get_out_status?()
     @is_out
+  end
+  def summary()
+    not_out = (@is_out or @balls_faced == 0) ? "": "*"
+    "#{@name} - #{@runs_scored}#{not_out} (#{@balls_faced} balls)"
+  end
+  def get_ball_summary(result)
+    if(result == "out")
+      "#{@name} is out"
+    else
+      "#{@name} scores #{result} runs"
+    end
   end
 end
